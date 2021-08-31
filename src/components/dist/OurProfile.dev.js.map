@@ -1,0 +1,1 @@
+{"version":3,"sources":["OurProfile.js"],"names":["Program"],"mappings":";;AAAA;;;;AAGA,IAAMA,OAAO,GAAE,SAATA,OAAS,GAAI;AAEnB;AAEC,CAJD","sourcesContent":["import React from \"react\";\r\n\r\n\r\nconst Program =()=>{\r\n\r\nreturn\r\n\r\n}"],"file":"OurProfile.dev.js"}

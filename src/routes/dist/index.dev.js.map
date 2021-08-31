@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":["Index"],"mappings":";;AAAA;;AACA;;;;AAEA,IAAMA,KAAK,GAAC,SAANA,KAAM,GAAI;AAEZ;AAGH,CALD","sourcesContent":["import React from \"react\";\r\nimport { Switch,Route } from \"react-router-dom\";\r\n\r\nconst Index=()=>{\r\n\r\n    return \r\n\r\n\r\n}"],"file":"index.dev.js"}

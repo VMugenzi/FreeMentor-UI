@@ -1,0 +1,1 @@
+{"version":3,"sources":["home.js"],"names":["Home"],"mappings":";;AAAA;;;;AAIA,IAAMA,IAAI,GAAC,SAALA,IAAK,GAAI;AAEX;AAGH,CALD","sourcesContent":["import React from \"react\";\r\n\r\n\r\n\r\nconst Home=()=>{\r\n\r\n    return\r\n\r\n\r\n}"],"file":"home.dev.js"}
