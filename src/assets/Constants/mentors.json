@@ -1,0 +1,42 @@
+[{
+    "password": "$2b$10$lLN4zJGqVETHZAWjMgcGB.Jyg6MkbFHno25o2cHpQK98wI8OS05l.",
+    "role": "mentor",
+    "_id": "611bef289c44de3730c60039",
+    "firstName": "Vivine",
+    "lastName": "Mugenzi",
+    "gender": "female",
+    "phoneNumber": "0785977303",
+    "email": "vivinemugenzi@gmail.com",
+    "age": 28,
+    "career": "Engineering",
+    "status": "active",
+    "__v": 0
+},
+{
+    "password": "$2b$10$uD6uIYoVJOXOTSLpOkR4ReuzsICJwKIV7Ts1zuxwD5hFyZIU7LEkW",
+    "role": "mentor",
+    "_id": "611bef519c44de3730c6003c",
+    "firstName": "Hubert",
+    "lastName": "Mugenzi",
+    "gender": "male",
+    "phoneNumber": "0785977303",
+    "email": "hubertmugenzi@gmail.com",
+    "age": 25,
+    "career": "Global Health",
+    "status": "active",
+    "__v": 0
+},
+{
+    "password": "$2b$10$E.HDI3u2Eun9qFSC7C9TZOH7p4JaTAVCFDNryWpv5nF9DhpR/KUam",
+    "role": "mentor",
+    "_id": "611bef7d9c44de3730c6003f",
+    "firstName": "Jules",
+    "lastName": "Mugenzi",
+    "gender": "male",
+    "phoneNumber": "0785977303",
+    "email": "julesmugenzi@gmail.com",
+    "age": 20,
+    "career": "Biomedical Engineering",
+    "status": "active",
+    "__v": 0
+}]
