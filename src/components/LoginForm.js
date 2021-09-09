@@ -72,9 +72,11 @@ const SigninForm = () => {
         </Form.Item>
   
         <Form.Item>
+        <Link to="/dashboard">
           <Button type="primary" htmlType="submit" className="login-form-button">
             Log in
           </Button>
+          </Link>
           Or <Link onClick={handleClick} to="/SignupForm">Register now!</Link>
           
         </Form.Item>

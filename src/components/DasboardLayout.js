@@ -16,7 +16,7 @@ import {
 
   const DashboardLayout=({children})=>{
     const [collapsed,setCollapsed] =useState(false);
-    
+
     const toggle =()=>{
         setCollapsed(!collapsed);
     }
@@ -29,6 +29,7 @@ return(
           <div className="logo" />
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
             <Menu.Item key="1" icon={<UserOutlined />}>
+            <Link to="/dashboard">   Sessions      </Link>
               Sessions
             </Menu.Item>
             <Menu.Item key="2" icon={<VideoCameraOutlined />}>
