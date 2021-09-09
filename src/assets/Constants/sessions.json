@@ -1,0 +1,29 @@
+
+    
+ [
+        {
+            "status": "Pending",
+            "_id": "611ebeb05bcfe93e18f754da",
+            "title": "Mentoring Session I",
+            "description": "This session will be learned by a mentor It will introduce you to your career",
+            "user": {
+                "_id": "611d66777749922c58715551",
+                "firstName": "Vivi",
+                "lastName": "Nyampinga",
+                "gender": "female",
+                "phoneNumber": "0785977303",
+                "email": "vivinyampinga@gmail.com"
+            },
+            "mentor": {
+                "_id": "611bef7d9c44de3730c6003f",
+                "firstName": "Jules",
+                "lastName": "Mugenzi",
+                "gender": "male",
+                "phoneNumber": "0785977303",
+                "email": "julesmugenzi@gmail.com"
+            },
+            "timeToStart": "2020-10-10T16:00:00.000Z",
+            "timeToEnd": "2020-10-10T17:00:00.000Z",
+            "__v": 0
+        }
+    ]

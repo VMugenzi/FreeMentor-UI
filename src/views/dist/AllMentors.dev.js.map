@@ -1,0 +1,1 @@
+{"version":3,"sources":["AllMentors.js"],"names":["AllMentors"],"mappings":";;AAAA;;;;AAIA,IAAMA,UAAU,GAAC,SAAXA,UAAW,GAAI;AACjB;AACH,CAFD","sourcesContent":["import React from\"react\";\r\n\r\n\r\n\r\nconst AllMentors=()=>{\r\n    return\r\n}"],"file":"AllMentors.dev.js"}
