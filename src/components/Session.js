@@ -7,9 +7,26 @@ import {
     Select,
     DatePicker
   } from 'antd';
+import mentors from "../assets/Constants/mentors.json";
 
+const {Option}=Select;
 
+function onChange(value){
+  console.log(`selected${value}`);
 
+}
+
+function onBlur(value){
+  console.log(`selected${value}`);
+}
+
+function onFocus() {
+  console.log('focus');
+}
+
+function onSearch(val) {
+  console.log('search:', val);
+}
 
 const Session =()=>{
     return (
@@ -30,8 +47,25 @@ const Session =()=>{
             <Input />
           </Form.Item>
           <Form.Item label="Select Mentor">
-            <Select>
-              <Select.Option value="demo">Demo</Select.Option>
+            <Select
+            showSearch
+            style={{ width: 200 }}
+            placeholder="Select a person"
+            optionFilterProp="children"
+            onChange={onChange}
+            onFocus={onFocus}
+            onBlur={onBlur}
+            onSearch={onSearch}
+            filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            }
+            >
+              {
+                        mentors.map((mentor) => (
+                            <Option value={mentor._id}>{mentor.firstName}</Option>
+                        ))
+                    }
+
             </Select>
           </Form.Item>
           <Form.Item label="Time To Start">
