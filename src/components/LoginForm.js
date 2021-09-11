@@ -1,8 +1,8 @@
 import React,{useState} from "react";
-import { Form, Input, Button, Checkbox, Modal } from 'antd';
+import { Form, Input, Button, Checkbox, Modal,notification } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import {Link} from "react-router-dom";
-
+import {Link, useHistory} from "react-router-dom";
+import AuthApi from "../services/Auth";
 import SignupForm from "./SignupForm";
 
 const SigninForm = () => {
@@ -19,9 +19,22 @@ const SigninForm = () => {
   const handleCancel = () => {
     setIsModalVisible(false);
   };
+  const history= useHistory();
 
-    const onFinish = (values) => {
-      console.log('Received values of form: ', values);
+    const onFinish = async(values) => {
+     
+     const response = await  AuthApi.login(values);
+     console.log("response:",response)
+     if(!response){
+       return notification.error({message:"Invalid credentials, Please try again"})
+     }
+     if (response.data.status===200){
+       return history.push("/dashboard")
+     }
+     else{
+       return notification.error({message:"Invalid credentials, Please try again"});
+     }
+      //console.log('Received values of form: ', values);
     };
 
     const handleClick = e => {
@@ -72,11 +85,11 @@ const SigninForm = () => {
         </Form.Item>
   
         <Form.Item>
-        <Link to="/dashboard">
+        
           <Button type="primary" htmlType="submit" className="login-form-button">
             Log in
           </Button>
-          </Link>
+          
           Or <Link onClick={handleClick} to="/SignupForm">Register now!</Link>
           
         </Form.Item>

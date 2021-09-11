@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, Input, Button, Checkbox } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { UserOutlined, LockOutlined, PhoneTwoTone } from '@ant-design/icons';
+
 
 const SignupForm = () => {
   const onFinish = (values) => {
@@ -8,6 +9,8 @@ const SignupForm = () => {
   };
 
   return (
+    <div style={{padding:"15%"}}>
+      <h1 style={{color:"indigo"}} >Signup Form</h1>
     <Form
       name="normal_login"
       className="login-form"
@@ -26,6 +29,25 @@ const SignupForm = () => {
         rules={[{ required: true, message: 'Please input your  last name!' }]}
       >
         <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="lastName" />
+      </Form.Item>
+     <Form.Item
+        name="gender"
+        rules={[{ required: true, message: 'Please input your  gender' }]}
+      >
+        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="gender" />
+      </Form.Item>
+
+      <Form.Item
+        name="age"
+        rules={[{ required: true, message: 'Please input your  age' }]}
+      >
+        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Age" />
+      </Form.Item>
+   <Form.Item
+        name="phoneNumber"
+        rules={[{ required: true, message: 'Please input your  phone number' }]}
+      >
+        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="phoneNumber" />
       </Form.Item>
 
       <Form.Item
@@ -57,6 +79,7 @@ const SignupForm = () => {
         </Form.Item>      
       </Form.Item>
     </Form>
+    </div>
   );
 };
 export default SignupForm;
