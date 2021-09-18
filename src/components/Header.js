@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState, useEffect} from "react";
 import { Menu, Modal} from 'antd';
 import "./index.css";
 import 'antd/dist/antd.css';
@@ -9,6 +9,8 @@ import SigninForm from "./LoginForm";
      const Header=()=>{
 
       const [isModalVisible, setIsModalVisible] = useState(false);
+      const [token, setToken]=useState(null);
+
 
       const showModal = () => {
         setIsModalVisible(true);
@@ -29,6 +31,9 @@ import SigninForm from "./LoginForm";
             console.log('click ', e);
             setCurrent(e.key);
           };
+          useEffect(()=>{
+   setToken (localStorage.getItem("freeMentor_token"));
+          })
 
     return(
       <>
@@ -53,9 +58,12 @@ import SigninForm from "./LoginForm";
         <Link onClick={handleClick} to="/allmentors"/>
           All Mentors
         </Menu.Item>
-        <Menu.Item key="login" onClick={showModal} >
+       { !token?
+       (<Menu.Item key="login" onClick={showModal} >
          Login
-        </Menu.Item>
+        </Menu.Item>):(<Menu.Item key="logout" onClick={()=>(localStorage.removeItem("freeMentor_token"))} >
+        <Link to="/home"> Logout </Link>
+        </Menu.Item>)}
         
       </Menu>
 

@@ -1,11 +1,29 @@
 import React from "react";
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button, Checkbox, notification, Select } from 'antd';
 import { UserOutlined, LockOutlined, PhoneTwoTone } from '@ant-design/icons';
+import AuthApi from "../services/Auth";
 
 
+
+const {Option}=Select;
 const SignupForm = () => {
-  const onFinish = (values) => {
+  const onFinish = async(values) => {
     console.log('Received values of form: ', values);
+   const response= await AuthApi.signup(values);
+   if(!response){
+     return notification.error({message:"Failed to signup"});
+
+   }
+
+   if(response.data.status===200){
+     notification.success({message:"Registered succesfuly"});
+
+   }
+   else{
+    return notification.error({message:"Failed to signup, please try again."});
+   }
+  
+
   };
 
   return (
@@ -34,7 +52,11 @@ const SignupForm = () => {
         name="gender"
         rules={[{ required: true, message: 'Please input your  gender' }]}
       >
-        <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="gender" />
+               <Select placeholder="select your gender">
+          <Option value="male">Male</Option>
+          <Option value="female">Female</Option>
+          <Option value="other">Other</Option>
+        </Select>
       </Form.Item>
 
       <Form.Item
@@ -51,7 +73,7 @@ const SignupForm = () => {
       </Form.Item>
 
       <Form.Item
-        name="Email"
+        name="email"
         rules={[{ required: true, message: 'Please input your  Email!' }]}
       >
         <Input prefix={<UserOutlined className="site-form-item-icon" />} type="email" placeholder="Email" />
