@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import { Form, Input, Button, Checkbox, Modal,notification } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import {Link, useHistory} from "react-router-dom";
-import AuthApi from "../services/Auth";
+import Auth from "../services/Auth";
 import SignupForm from "./SignupForm";
 
 const SigninForm = () => {
@@ -22,13 +22,14 @@ const SigninForm = () => {
   const history= useHistory();
 
     const onFinish = async(values) => {
-     
-     const response = await  AuthApi.login(values);
+     console.log(values);
+     const response = await  Auth.login(values);
      console.log("response:",response)
      if(!response){
        return notification.error({message:"Invalid credentials, Please try again"})
      }
      if (response.data.status===200){
+       localStorage.setItem("freeMentor_token", response.data.token);
        return history.push("/dashboard")
      }
      else{
@@ -59,8 +60,8 @@ const SigninForm = () => {
         
       >
         <Form.Item
-          name="username"
-          rules={[{ required: true, message: 'Please input your Username!' }]}
+          name="email"
+          rules={[{ required: true, message: 'Please input your email' }]}
         >
           <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
         </Form.Item>
